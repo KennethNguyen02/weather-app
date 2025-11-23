@@ -11,6 +11,16 @@ export async function getLocationData(city: string) {
         latitude: locationData.latitude,
         longitude: locationData.longitude,
         country: locationData.country,
-        timezone: locationData.timezone 
+        timezone: locationData.timezone,
+        time: getLocalTime(locationData.timezone)
     }
 }
+
+function getLocalTime(timezone: string) {
+    return new Date().toLocaleString("en-GB", {
+        timeZone: timezone,
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+}
+
