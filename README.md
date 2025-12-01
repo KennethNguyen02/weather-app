@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+Weather Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive weather application built with React. The app allows users to search for any city in the world and view current weather information in real time. The application fetches data from a public weather API and displays temperature, weather conditions, humidity, wind speed, and location details.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Search weather by city name
 
-## React Compiler
+Display current temperature and weather conditions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Show humidity, wind speed, and other relevant details
 
-## Expanding the ESLint configuration
+Clean and responsive UI
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Error handling for invalid or empty search queries
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Automatic formatting of dates based on user locale (e.g., Norway vs. Seoul)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Frontend:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+React (TypeScript)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Vite or Create React App (depending on your setup)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+CSS modules / Tailwind / standard CSS (adjust based on your project)
+
+APIs:
+
+OpenWeatherMap API (or whichever API you used)
+
+Fetch API / Axios for HTTP requests
+
+Project Structure
+src/
+  components/
+    SearchBar.tsx
+    WeatherCard.tsx
+  services/
+    fetchService.ts
+    locationService.ts
+  utils/
+    formatDate.ts
+  App.tsx
+  main.tsx
+
+
+You can adjust this section if your structure is different.
+
+How It Works
+
+The user enters a city name in the search bar.
+
+When pressing Enter or clicking the search button, the app calls the onSearch function.
+
+The frontend sends a request to the weather API using the fetchService.
+
+The response is processed and the UI updates with the new weather information.
+
+The displayed date is formatted using JavaScript’s toLocaleDateString, ensuring proper formatting based on region (e.g., Norwegian vs. Korean local time).
+
+Setup & Installation
+1. Clone the repository
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
+
+2. Install dependencies
+npm install
+
+3. Add your API key
+
+Create a .env file in the project root:
+
+VITE_WEATHER_API_KEY=your_api_key_here
+
+
+(Or REACT_APP_WEATHER_API_KEY depending on your setup.)
+
+4. Run the application
+npm run dev
+
+
+The app will be available at:
+
+http://localhost:5173/
+
+
+(or the port used by your setup)
+
+Environment Variables
+Variable	Description
+VITE_WEATHER_API_KEY	Your API key from OpenWeatherMap
+Future Improvements
+
+Add animated icons (Lottie or custom SVG)
+
+Support for hourly and weekly forecasts
+
+Add backend (Node/Spring Boot) to store search history
+
+Dark mode
+
+Geolocation-based weather lookup
+
+License
+
+This project is open-source and available under the MIT License.
