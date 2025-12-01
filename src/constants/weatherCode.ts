@@ -1,17 +1,17 @@
-import sun from "../weatherIcons/sun.svg";
-import cloud from "../weatherIcons/cloud.svg";
-import fog from "../weatherIcons/fog.svg";
-import drizzle from "../weatherIcons/drizzle.svg";
-import freezingDrizzle from "../weatherIcons/freezingDrizzle.svg";
-import rain from "../weatherIcons/rain.svg";
-import freezingRain from "../weatherIcons/freezingRain.svg";
-import snowfall from "../weatherIcons/snowfall.svg";
-import snowgGrains from "../weatherIcons/snowGrains.svg";
-import rainShowers from "../weatherIcons/rainShowers.svg";
-import snowShowers from "../weatherIcons/snowShowers.svg";
-import thunder from "../weatherIcons/thunder.svg";
-import night from "../weatherIcons/night.svg";
-import cloudNight from "../weatherIcons/cloudNight.svg";
+import sun from "../assets/weatherIcons/sun.svg";
+import night from "../assets/weatherIcons/night.svg";
+import cloud from "../assets/weatherIcons/cloud.svg";
+import cloudNight from "../assets/weatherIcons/cloudNight.svg";     
+import fog from "../assets/weatherIcons/fog.svg";
+import drizzle from "../assets/weatherIcons/drizzle.svg";
+import freezingDrizzle from "../assets/weatherIcons/freezingDrizzle.svg";
+import rain from "../assets/weatherIcons/rain.svg";
+import freezingRain from "../assets/weatherIcons/freezingRain.svg";
+import snowfall from "../assets/weatherIcons/snowfall.svg";
+import snowgGrains from "../assets/weatherIcons/snowGrains.svg";
+import rainShowers from "../assets/weatherIcons/rainShowers.svg";
+import snowShowers from "../assets/weatherIcons/snowShowers.svg";
+import thunder from "../assets/weatherIcons/thunder.svg";
 
 
 

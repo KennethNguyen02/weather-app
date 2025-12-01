@@ -23,7 +23,7 @@ export async function getWeatherData(lat: number, lon: number) {
             formattedDate: formatDate(date),
             maxTemp: data.daily.temperature_2m_max[i],
             minTemp: data.daily.temperature_2m_min[i],
-            weatherCode: data.daily.weather_code[i]
+            weatherCode: data.daily.weather_code[i],
         }))
     };
 }
@@ -36,4 +36,5 @@ function formatDate(dateStr: string) {
     month: "short"
   });
 }
+
 

@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import SearchBar from './components/ui/SearchBar'
-import { fetchLocation } from "./api/fetchLocation";
+
 import { getLocationData } from './services/locationService';
 import { getWeatherData } from './services/weatherService';
-import MainCard from './components/MainCardModel';
 
-import {fetchWeather} from "./api/fetchWeather";
+import SearchForm from './components/ui/SearchForm';
+import MainCard from './components/MainCardModel';
+import LandingCard from './components/ui/LandingCard';
+
+
+
 
 function App() {
 
@@ -26,21 +28,32 @@ function App() {
 
   return (
 
-    <>
-      <div className = "flex row items-center p-4 gap-2 w-3/4 mx-auto mt-2">
-        <SearchBar onSearch ={handleSearch}/> {/* onSearch propen er det samme som handleSearch */}
+    <div  className="
+        min-h-screen 
+        w-full 
+        bg-gradient-to-br 
+        from-sky-700 
+        to-blue-300 
+        flex 
+        flex-col 
+        items-center 
+        p-6
+      ">
+      <div className = "flex row items-center p-4 gap-2 w-3/4 mx-auto mt-2 ">
+        <SearchForm onSearch ={handleSearch}/> {/* onSearch propen er det samme som handleSearch */}
       </div>
+
 
       <div className = "flex items-center justify-center mt_10">
-      {location && weather ? (
-        <MainCard location={location} weather={weather} />
-      ) : ( <p> No results yet</p>
-      
-        )
-      }
+      {location && weather ? 
+        ( <MainCard key={location.name} location={location} weather={weather} />) 
+        : 
+        ( <LandingCard />)
+        }
       </div>
 
-    </>
+
+    </div>
   
   )
 }

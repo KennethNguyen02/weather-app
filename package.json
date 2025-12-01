@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@heroui/react": "^2.8.5",
+    "@lottiefiles/dotlottie-web": "^0.57.0",
     "@tailwindcss/vite": "^4.1.17",
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",
