@@ -20,7 +20,6 @@ export default function WeatherCard({ weather }: WeatherCardProps){
         <CardBody className="flex flex-col items-center justify-center gap-2">
             <h1 className="text-blue-700"> Min : {weather.minTemp}°C </h1>
             <h1 className= "text-red-700">Max: {weather.maxTemp}°C </h1>
-            
         </CardBody>
         <CardFooter className="flex flex-row items-center justify-around">
             {info?.icon && <img src={info.icon} alt={info.name} className="w-16 h-16" />}

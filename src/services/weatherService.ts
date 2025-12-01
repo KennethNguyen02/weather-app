@@ -14,7 +14,8 @@ export async function getWeatherData(lat: number, lon: number) {
             weatherCode: data.current.weather_code,
             apparentTemperature: data.current.apparent_temperature, //feels like temperature
             isDay: data.current.is_day,
-            humidity: data.current.relative_humidity_2m
+            humidity: data.current.relative_humidity_2m,
+            precipitation: data.current.precipitation
         },
 
         
