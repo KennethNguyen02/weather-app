@@ -4,9 +4,12 @@ import { getLocationData } from './services/locationService';
 import { getWeatherData } from './services/weatherService';
 
 import SearchForm from './components/ui/SearchForm';
-import MainCard from './components/MainCardModel';
-import LandingCard from './components/ui/LandingCard';
-import HourlyPreview from './components/ui/HourlyPreview';
+import MainCard from './components/MainCardModel'
+import HourlyPreview from './components/ui/HourlyPreview'
+import DailyForecast from './components/DailyForecast'
+import LandingCard from './components/ui/LandingCard'
+
+
 
 
 
@@ -41,28 +44,26 @@ function App() {
         items-center 
         p-6
       ">
-      <div className = "flex row items-center p-4 gap-2 w-3/4 mx-auto mt-2 ">
-        <SearchForm onSearch ={handleSearch}/> {/* onSearch propen er det samme som handleSearch */}
-      </div>
+        <div className = "flex row items-center  gap-2 w-2/3 mx-auto mt-2 ">
+          <SearchForm onSearch ={handleSearch}/> {/* onSearch propen er det samme som handleSearch */}
+        </div>
 
 
-      <div className = "flex flex-col items-center justify-center mt_10 gap-4">
-        {location && weather ? ( 
-          <>
-            <MainCard key={location.name} location={location} weather={weather} /> 
-            <HourlyPreview hourly = {weather.hourly} currentHour = {weather.currentLocalHour}/>
-          </>
-          ) //we have a key so that react will unmount the old card and mount a fresh one. since the key is changing
-          : 
-          ( <LandingCard />)
-          }
-      </div>
+        <div className = "flex flex-col items-center justify-center mt-5 gap-4 w-full max-w-xl">
+          {location && weather ? ( 
+            <>
+              <MainCard key={location.name} location={location} weather={weather} /> 
+              <HourlyPreview hourly = {weather.hourly} currentHour = {location.hour}/>
+              <DailyForecast dailyWeather={weather.daily} />
+              
+              
+            </>
+            ) //we have a key so that react will unmount the old card and mount a fresh one. since the key is changing
+            : 
+            ( <LandingCard />)
+            }
+        </div>
       
-      
-      
-      
-      
-
     </div>
   
   );

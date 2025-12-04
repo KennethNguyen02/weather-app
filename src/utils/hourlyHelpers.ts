@@ -16,9 +16,25 @@ export function getNextHours(hourly: any[], currentHour: number, count: number){
     );
 }
 
-export function getFullDay(hourly:any[]){
-    return hourly.slice
+export function getLocalTime(timezone: string) {
+    return new Date().toLocaleString("en-GB", {
+        timeZone: timezone,
+        hour: "2-digit",
+        minute: "2-digit"
+    });
 }
+
+
+export function formatDate(dateStr: string) {
+  const date = new Date(dateStr);
+
+  return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short"
+  });
+}
+
+
 
 
 

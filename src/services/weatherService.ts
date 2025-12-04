@@ -1,4 +1,5 @@
 import { fetchWeather } from "../api/fetchWeather";
+import {formatDate} from "../utils/hourlyHelpers"
 
 
 
@@ -6,12 +7,11 @@ export async function getWeatherData(lat: number, lon: number) {
     const data = await fetchWeather(lat, lon);
     if (!data) return null;
 
-    const localNow = new Date(Date.now() + data.utc_offset_seconds * 1000) //adding timezone data to the UTC to find local time in our search
-    const currentLocalHour = localNow.getHours(); //type is a number
+   
 
     return { //returns 1 object that contains 4 properties
 
-        currentLocalHour,
+  
 
         current: { 
             temperature: data.current.temperature_2m,
@@ -43,14 +43,4 @@ export async function getWeatherData(lat: number, lon: number) {
         }))
     };
 }
-
-function formatDate(dateStr: string) {
-  const date = new Date(dateStr);
-
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short"
-  });
-}
-
 

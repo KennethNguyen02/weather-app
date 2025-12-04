@@ -20,10 +20,12 @@ export default function MainCard({location, weather} : MainCardProps) {
 
     return (
 
-        <Card className="max-w-[500px] min-w-[300px] 
+        <Card className="
+        w-2/3
         bg-gradient-to-t from-white/90 to-white/30
         shadow-xl
-        rounded-2xl">
+        rounded-2xl
+        ">
             <CardHeader className="flex flex-col items-center justify-center font-sans p-2">
                 <h1 className="text-2xl font-bold">{[location.name, location.country].filter(Boolean).join(", ")}</h1>
                 <p className="text-sm text-gray-500">{location.time} , {weather.daily[0].formattedDate}</p>

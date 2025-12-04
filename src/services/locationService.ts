@@ -1,10 +1,11 @@
 import {fetchLocation} from "../api/fetchLocation";
+import {getLocalTime} from "../utils/hourlyHelpers"
 
 export async function getLocationData(city: string) {
     const locationData = await fetchLocation(city);
     if (!locationData) { return null;}
 
-
+    
 
     return {
         name: locationData.name, //lag objekt med navn name, og hent ut verdien fra listen
@@ -12,18 +13,14 @@ export async function getLocationData(city: string) {
         longitude: locationData.longitude,
         country: locationData.country,
         timezone: locationData.timezone,
-        time: getLocalTime(locationData.timezone)
+        time: getLocalTime(locationData.timezone),
+        hour: Number(getLocalTime(locationData.timezone).slice(0,2))
     }
 }
 
-function getLocalTime(timezone: string) {
-    return new Date().toLocaleString("en-GB", {
-        timeZone: timezone,
-        hour: "2-digit",
-        minute: "2-digit"
-    });
 
-}
+
+
 
 
 

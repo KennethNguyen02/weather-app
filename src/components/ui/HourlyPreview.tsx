@@ -13,9 +13,9 @@ export default function Hourly({ hourly, currentHour }: HourlyPreviewProps) {
     const nextHours = getNextHours(hourly, currentHour, 4);
 
     return (
-        <div className="bg-blue-300 rounded-xl">
+        <div className="bg-blue-300 rounded-xl w-2/3">
 
-            <div className="flex flex-row gap-6">
+            <div className="flex flex-row gap-5 justify-center ">
                 {nextHours.map((h, i) => {
          
                     const info = getWeatherInfo(h.weatherCode);
