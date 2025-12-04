@@ -13,7 +13,7 @@ export default function AttributeCard({ attributeKey, value}: AttributeCardProps
     if (!attributes) return null;
 
     return (
-        <Card className="flex flex-col max-w-[150px] min-w-[100px]">
+        <Card className="flex flex-col max-w-[120px] min-w-[100px]">
             <CardHeader className="flex flex-col items-center justify-center">
                 {<img src={attributes.icon} alt={attributes.label} className="w-8 h-8" />}
             </CardHeader>

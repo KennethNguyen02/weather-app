@@ -6,6 +6,8 @@ import { getWeatherData } from './services/weatherService';
 import SearchForm from './components/ui/SearchForm';
 import MainCard from './components/MainCardModel';
 import LandingCard from './components/ui/LandingCard';
+import HourlyPreview from './components/ui/HourlyPreview';
+
 
 
 
@@ -44,17 +46,25 @@ function App() {
       </div>
 
 
-      <div className = "flex items-center justify-center mt_10">
-      {location && weather ? 
-        ( <MainCard key={location.name} location={location} weather={weather} />) 
-        : 
-        ( <LandingCard />)
-        }
+      <div className = "flex flex-col items-center justify-center mt_10 gap-4">
+        {location && weather ? ( 
+          <>
+            <MainCard key={location.name} location={location} weather={weather} /> 
+            <HourlyPreview hourly = {weather.hourly} currentHour = {weather.currentLocalHour}/>
+          </>
+          ) //we have a key so that react will unmount the old card and mount a fresh one. since the key is changing
+          : 
+          ( <LandingCard />)
+          }
       </div>
-
+      
+      
+      
+      
+      
 
     </div>
   
-  )
+  );
 }
 export default App
