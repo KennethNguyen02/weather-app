@@ -1,6 +1,8 @@
 import {Input, Form, Button} from "@heroui/react";
 import { useState } from "react";
-import magnifyingGlass from "../../assets/magnifyingGlass.svg";
+import magnifyingGlass from "../assets/magnifyingGlass.svg";
+
+
 
 
 interface SearchBarProp {
@@ -20,9 +22,13 @@ export default function SearchForm({onSearch} : SearchBarProp) {
         setIsLoading(false);
     }
 
+
+
     return (
         <Form className = "flex flex-row gap-2 w-full"
             onSubmit={handleSubmit}>
+
+            
             <Input
                 isDisabled={isLoading}
                 labelPlacement="outside"
@@ -34,7 +40,6 @@ export default function SearchForm({onSearch} : SearchBarProp) {
             
 
             <Button
-             
                 isDisabled={isLoading}
                 isLoading={isLoading} //knappen loader effekt når isLoading true
                 type="submit"
@@ -42,9 +47,9 @@ export default function SearchForm({onSearch} : SearchBarProp) {
                 startContent = {
                     !isLoading &&<img src={magnifyingGlass} alt="search icon" 
                     className="w-6 h-6"/>}
-            >
+            />
                 
-            </Button>
+          
         </Form>
            
     );

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import { getLocationData } from './services/locationService';
-import { getWeatherData } from './services/weatherService';
+import { getLocationData } from './services/locationService'
+import { getWeatherData } from './services/weatherService'
 
-import SearchForm from './components/ui/SearchForm';
+import HomeButton from './components/ui/HomeButton'
+import SearchForm from './components/SearchForm'
 import MainCard from './components/MainCardModel'
 import HourlyPreview from './components/ui/HourlyPreview'
 import DailyForecast from './components/DailyForecast'
@@ -44,7 +45,8 @@ function App() {
         items-center 
         p-6
       ">
-        <div className = "flex row items-center  gap-2 w-2/3 mx-auto mt-2 ">
+        <div className = "flex flex-row  items-center  gap-2 w-2/3 mx-auto mt-2 ">
+          <HomeButton onHome={() => setLocation(null)}/>
           <SearchForm onSearch ={handleSearch}/> {/* onSearch propen er det samme som handleSearch */}
         </div>
 
