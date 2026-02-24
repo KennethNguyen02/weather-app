@@ -22,9 +22,9 @@ Frontend:
 
 React (TypeScript)
 
-Vite or Create React App (depending on your setup)
+Vite 
 
-CSS modules / Tailwind / standard CSS (adjust based on your project)
+CSS modules / Tailwind / HeroUI as library
 
 APIs:
 
